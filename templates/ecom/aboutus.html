@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Simple E-commerce</title>
+  <style media="screen">
+    .footer {
+      position: fixed;
+    }
+
+    /* Style for the team members */
+    .team-members {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .team-member {
+      text-align: center;
+      margin: 10px;
+    }
+
+    .team-member img {
+      max-width: 150px;
+      max-height: 150px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body style="background-color:#f7f7f7;">
+  {% if request.user.is_authenticated %}
+  {% include "ecom/customer_navbar.html" %}
+  {% else %}
+  {% include "ecom/navbar.html" %}
+  {% endif %}
+  <br><br><br>
+
+  <!-- "About Us" Section with Image -->
+  <div style="text-align: center;">
+    <h2>About Us</h2>
+    <p>
+      "Welcome to ShopVista, your premier online destination for all your shopping needs. Established in 2023, we are a cutting-edge e-commerce platform dedicated to bringing you a seamless and delightful shopping experience. At ShopVista, we understand the importance of easy, convenient, and secure online shopping, and that's why we've curated an extensive range of products, from fashion and electronics to home decor and more, all in one place. Our mission is to connect you with top-quality brands and products, offering a wide selection that caters to your diverse preferences. With a commitment to customer satisfaction, our team works tirelessly to ensure that your shopping journey is as enjoyable as it is hassle-free. We value your trust and aim to be your go-to destination for everything you desire. Thank you for choosing ShopVista, and we look forward to serving you on your shopping adventures."
+    </p>
+  </div>
+  <!-- End "About Us" Section -->
+
+  <!-- "Our Team" Section with Team Members in a Horizontal Layout -->
+   <div style="text-align: center;">
+  <h2>OUR TEAM</h2>
+  <div class="team-members">
+    <div class="team-member">
+      <img src="{% static 'team_member1.jpg' %}" alt="Team Member 1">
+      <h3>Geethika Chappidi</h3>
+      <p>CFO</p>
+    </div>
+
+    <div class="team-member">
+      <img src="{% static 'C:\Users\DELL\Downloads\sruthi1.jpeg' %}" alt="Team Member 2">
+      <h3>Anumolu Sruthi Chowdary</h3>
+      <p>CEO</p>
+    </div>
+
+    <div class="team-member">
+      <img src="{% static 'team_member3.jpg' %}" alt="Team Member 3">
+      <h3>Akhilesh Dasari</h3>
+      <p>COO</p>
+    </div>
+  </div>
+  <!-- End "Our Team" Section -->
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+<!--
+developed By : Team 1067
+-->
+
+</html>
